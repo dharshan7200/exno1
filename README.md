@@ -87,7 +87,7 @@ c3=ir.sepal_width.quantile(0.75)
 iq=c3-c1
 print(c3)
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/743ab1d5-b07b-4851-ae77-b134525afc42)
-```
+
 
 rid=ir[((ir.sepal_width<(c1-1.5*iq))|(ir.sepal_width>(c3+1.5*iq)))]
 rid['sepal_width']
@@ -138,7 +138,7 @@ df1 = df[z<3]
 df1
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/cc0a56f3-7f6f-415b-b000-3f63d30f83f6)
 
-
+```
 ## Result:
 
 Hence the data was cleaned , outliers were detected and removed.
