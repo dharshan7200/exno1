@@ -86,59 +86,70 @@ c1=ir.sepal_width.quantile(0.25)
 c3=ir.sepal_width.quantile(0.75)
 iq=c3-c1
 print(c3)
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/743ab1d5-b07b-4851-ae77-b134525afc42)
 
-
+```
 rid=ir[((ir.sepal_width<(c1-1.5*iq))|(ir.sepal_width>(c3+1.5*iq)))]
 rid['sepal_width']
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/d288949a-e36a-4020-8c6a-1c630a1b9d1f)
-
+```
 delid=ir[~((ir.sepal_width<(c1-1.5*iq))|(ir.sepal_width>(c3+1.5*iq)))]
 delid
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/00c49cfc-74d6-4a55-989a-d3d1c60528e6)
-
+```
 sns.boxplot(x='sepal_width',data=delid)
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/8dc2e07f-4e1b-4b59-9b68-8d1a1cad8bf7)
 
 ## Z score
-
+```
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import scipy.stats as stats
 dataset=pd.read_csv("heights.csv")
 dataset
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/96ca1de3-a4ca-4633-b9c6-82ad79008375)
-
+```
 df = pd.read_csv("heights.csv")
 q1 = df['height'].quantile(0.25)
 q2 = df['height'].quantile(0.5)
 q3 = df['height'].quantile(0.75)
 iqr = q3-q1
 iqr
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/08f4c7b4-2a81-43b4-98fa-87aefc1dc2a1)
-
+```
 low = q1 - 1.5*iqr
 low
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/0582bd6e-71cb-49ca-8e86-2e1eda81256b)
-
+```
 high = q3 + 1.5*iqr
 high
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/c7d4e890-6d59-4c6e-a615-8a965f562ea5)
-
+```
 df1 = df[((df['height'] >=low)& (df['height'] <=high))]
 df1
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/5021f352-2840-4e17-bdaa-a89c4e000382)
-
+```
 z = np.abs(stats.zscore(df['height']))
 z
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/0fdfc9e5-799b-4673-bb6c-b3e94f105c26)
-
+```
 df1 = df[z<3]
 df1
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/cc0a56f3-7f6f-415b-b000-3f63d30f83f6)
 
-```
+
 ## Result:
 
 Hence the data was cleaned , outliers were detected and removed.
