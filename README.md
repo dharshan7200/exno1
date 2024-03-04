@@ -31,52 +31,63 @@ df
 ```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/386699f2-5ead-452a-988f-9dc702780233)
 ```
-df.isnull().sum()```
+df.isnull().sum()
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/b1e58f0d-028a-4d81-a5a4-4c9d124be6ff)
-
+```
 df.isnull().any()
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/1e44112b-62f1-45d9-ae5d-e219ce3e3366)
-
+```
 df.dropna()
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/086d0bfb-e543-4a6d-8a3c-26190da1b3d1)
-
+```
 df.fillna(0)
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/8880436a-437e-482e-9a1d-9003245f07fa)
-
+```
 df.fillna(method = 'ffill')
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/65bd6f16-25fd-4909-9545-6a6d43c7005f)
 
-
+```
 df.fillna(method = 'bfill')
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/f1460e19-efbe-47b2-b76f-2707efaed2cd)
-
+```
 df_dropped = df.dropna()
 df_dropped
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/e65154f6-d942-4308-b9dc-94083969771f)
-
+```
 df.fillna({'GENDER':'FEMALE','NAME':'PRIYU','ADDRESS':'POONAMALEE','M1':98,'M2':87,'M3':76,'M4':92,'TOTAL':305,'AVG':89.999999})
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/592588ca-a0f9-4acd-8059-cac8d444a3e4)
 
 ## IQR(Inter Quartile Range)
-
+```
 import pandas as pd
 ir=pd.read_csv('iris.csv')
 ir
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/f6aacc7a-fdc7-4bee-8a80-fa4ad12344a5)
-
+```
 ir.describe()
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/55ac293d-8a30-435a-9d0c-91f246817f33)
-
+```
 import seaborn as sns
 sns.boxplot(x='sepal_width',data=ir)
+```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/7ae0fb52-f9c4-4a76-b6a2-55f7c931ce6e)
-
+```
 c1=ir.sepal_width.quantile(0.25)
 c3=ir.sepal_width.quantile(0.75)
 iq=c3-c1
 print(c3)
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/743ab1d5-b07b-4851-ae77-b134525afc42)
-
+```
 
 rid=ir[((ir.sepal_width<(c1-1.5*iq))|(ir.sepal_width>(c3+1.5*iq)))]
 rid['sepal_width']
