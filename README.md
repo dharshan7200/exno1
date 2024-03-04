@@ -30,8 +30,8 @@ df=pd.read_csv("SAMPLEIDS.csv")
 df
 ```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/386699f2-5ead-452a-988f-9dc702780233)
-
-df.isnull().sum()
+```
+df.isnull().sum()```
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/b1e58f0d-028a-4d81-a5a4-4c9d124be6ff)
 
 df.isnull().any()
@@ -89,7 +89,7 @@ delid
 sns.boxplot(x='sepal_width',data=delid)
 ![image](https://github.com/dharshan7200/exno1/assets/138850116/8dc2e07f-4e1b-4b59-9b68-8d1a1cad8bf7)
 
-                                                                   ## Z score
+## Z score
 
 import matplotlib.pyplot as plt
 import pandas as pd
